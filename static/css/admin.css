@@ -411,6 +411,7 @@
     flex-direction: row;
     align-items: center;
     z-index: 1;
+    margin-top: 48px;
 }
 
 .admin__content
@@ -453,4 +454,29 @@
     margin-top: 8px;
     margin-left: 50px;
     font: 400 normal 20px/18px 'Oxygen';
+}
+
+.card-info__author-photo
+{
+    height: 32px;
+    margin-left: 38px;
+    margin-top:12px;
+}
+
+.card-info__author-name
+{
+    font: 400 normal 16px/17px 'Oxygen';
+    line-height: 24px;
+    color: rgba(46, 46, 46, 0.63);
+    margin-top: 12px;
+    margin-left: 14px;
+}
+
+.card-info__date
+{
+    font: 400 normal 16px/17px 'Oxygen';
+    line-height: 24px;
+    color: rgba(46, 46, 46, 0.63);
+    margin-top: 12px;
+    margin-left: 104px;
 }

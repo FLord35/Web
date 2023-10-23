@@ -2,6 +2,10 @@
 <g clip-path="url(#clip0_1_2163)">
 <path d="M0 16C0 10.3995 0 7.59921 1.08993 5.46009C2.04867 3.57847 3.57847 2.04867 5.46009 1.08993C7.59921 0 10.3995 0 16 0H440V360H0V16Z" fill="white"/>
 <g clip-path="url(#clip1_1_2163)">
+<g filter="url(#filter0_d_1_2163)">
+<path d="M16 35C16 33.3431 17.3431 32 19 32H309C310.657 32 312 33.3431 312 35V320C312 321.657 310.657 323 309 323H19C17.3431 323 16 321.657 16 320V35Z" fill="white"/>
+</g>
+<path d="M16 275H312V323H16V275Z" fill="#FCFCFC"/>
 <rect x="15.9688" y="274" width="295.984" height="1" fill="#EFEFEF"/>
 <rect x="15.9688" y="181" width="295.984" height="1" fill="#E5E5E5"/>
 </g>
@@ -11,6 +15,14 @@
 </g>
 <path d="M0.5 16C0.5 13.1915 0.500389 11.1152 0.634581 9.47274C0.768297 7.83613 1.03237 6.67442 1.53544 5.68709C2.44624 3.89955 3.89955 2.44624 5.68709 1.53544C6.67441 1.03237 7.83613 0.768297 9.47274 0.634581C11.1152 0.500389 13.1915 0.5 16 0.5H439.5V359.5H0.5V16Z" stroke="#D3D3D3"/>
 <defs>
+<filter id="filter0_d_1_2163" x="16" y="32" width="296" height="291" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2163"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2163" result="shape"/>
+</filter>
 <linearGradient id="paint0_linear_1_2163" x1="220" y1="0" x2="220" y2="72" gradientUnits="userSpaceOnUse">
 <stop stop-color="white" stop-opacity="0"/>
 <stop offset="1" stop-color="white"/>

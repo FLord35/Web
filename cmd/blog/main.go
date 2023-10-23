@@ -26,6 +26,8 @@ func main() {
 	mux := mux.NewRouter()
 	mux.HandleFunc("/home", index(dbx))
 	mux.HandleFunc("/post/{postID}", post(dbx))
+	mux.HandleFunc("/login", login(dbx))
+	mux.HandleFunc("/admin", admin(dbx))
 
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
