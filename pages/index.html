@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Index</title>
+  <link href="../static/css/main.css" rel="stylesheet">
+  <link href="../static/css/index.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+</head>
+<body class="container">
+  <header class="hood">
+    <div class="hood__hood-content">
+      <div class="hood-content__extra">
+        <img class="hood-content__logo" src="../static/img/escape_white.svg" alt="Escape.">
+        <nav>
+          <ul class="nav-header">
+            <li><a class="nav-header__link__white" href="#">HOME</a></li>
+            <li><a class="nav-header__link__white" href="#">CATEGORIES</a></li>
+            <li><a class="nav-header__link__white" href="#">ABOUT</a></li>
+            <li><a class="nav-header__link__white" href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="main">
+    <img class="main__image" src="../static/img/lets_do_it_together.png" alt="Lets do it together.">
+    <div class="main__main-content">
+      <h1 class="main-content__slogan">Let's do it together.</h1>
+      <p class="main-content__motto">We travel the world in search of stories. Come along for the ride.</p>
+      <button class="main-content__button">View Latest Posts</button>
+    </div>
+  </div>
+  <div class="menu">
+    <ul class="nav-main">
+      <li><a class="nav-main__link" href="#">Nature</a></li>
+      <li><a class="nav-main__link" href="#">Photography</a></li>
+      <li><a class="nav-main__link" href="#">Relaxation</a></li>
+      <li><a class="nav-main__link" href="#">Vacation</a></li>
+      <li><a class="nav-main__link" href="#">Travel</a></li>
+      <li><a class="nav-main__link" href="#">Adventure</a></li>
+    </ul>
+  </div>
+  <div class="posts">
+    <section class="posts__featured">
+      <h2 class="featured__header">Featured Posts</h2>
+      <hr class="underline">
+      <div class="featured__featured-content">
+
+        {{ range .FeaturedPosts }}
+
+        <div class="featured-content__featured-post">
+          <div>
+            <span class="featured-post__theme">ADVENTURE</span>
+            <img class="featured-post__image" src="{{ .BackgroundImg }}" alt="The Road Ahead">
+          </div>
+          <div class="featured-post__featured-post-content">
+            <a class="featured-post-content__title" href="/post/{{ .PostID }}">{{ .Title }}</a>
+            <p class="featured-post-content__description">{{ .Subtitle }}</p>
+            <div class="featured-post-content__featured-post-footer">
+              <img class="featured-post-footer__image" src="{{ .AuthorImg }}" alt="Mat Vogels">
+              <p class="featured-post-footer__author">{{ .Author }}</p>
+              <p class="featured-post-footer__date">{{ .PublishDate }}</p>
+            </div>
+          </div>
+        </div>
+
+        {{ end }}
+
+      </div>
+    </section>
+    <section class="posts__recent">
+      <h2 class="recent__header">Most Recent</h2>
+      <hr class="underline">
+      <div class="recent__recent-content">
+
+        {{ range .RecentPosts }}
+
+        <div class="recent-content__recent-post">
+          <img class="recent-post__image" src="{{ .BackgroundImg }}" alt="Still Standing Tall">
+          <hr class="recent-post__underline">
+          <div class="recent-post__recent-post-content">
+            <a class="recent-post-content__title" href="/post/{{ .PostID }}">{{ .Title }}</a>
+            <p class="recent-post-content__description">{{ .Subtitle }}</p>
+          </div>
+          <hr class="recent-post__underline">
+          <div class="recent-post__recent-post-footer">
+            <img class="recent-post-footer__image" src="{{ .AuthorImg }}" alt="William Wong">
+            <p class="recent-post-footer__author">{{ .Author }}</p>
+            <p class="recent-post-footer__date">{{ .PublishDate }}</p>
+          </div>
+        </div>       
+
+        {{ end }}
+
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <img class="footer__image" src="../static/img/stay_in_touch.png" alt="Stay in touch">
+    <div class="footer__in-touch">
+      <h2 class="in-touch__header">Stay in Touch</h2>
+      <hr class="underline">
+      <form class="in-touch__email">
+        <input class="email__field" type="text" placeholder="Enter your email address">
+        <button class="email__button">Submit</button>
+      </form>
+    </div>
+    <div class="footer__footer-content">
+      <div class="footer-content__extra">
+        <img class="footer-content__logo" src="../static/img/escape_white.svg" alt="Escape.">
+        <nav>
+          <ul class="nav-footer">
+            <li><a class="nav-footer__link" href="#">HOME</a></li>
+            <li><a class="nav-footer__link" href="#">CATEGORIES</a></li>
+            <li><a class="nav-footer__link" href="#">ABOUT</a></li>
+            <li><a class="nav-footer__link" href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

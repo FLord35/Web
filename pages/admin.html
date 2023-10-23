@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <link href="../static/css/main.css" rel="stylesheet">
+  <link href="../static/css/admin.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+</head>
+<body class="container">
+  <div class="admin">
+    <header class="admin__header">
+        <div class="header__content">
+        <img class="content__logo-admin" src="../static/img/escape_author_white.svg" alt="Logo">
+        <div class="content__menu">
+          <img class="menu__avatar" src="../static/img/avatar.svg">
+          <img class="menu__log-out" src="../static/img/log-out.svg">
+        </div>
+    </header>
+    <div class="admin__title">
+      <div class="title_content">
+        <p class="title_content__title">New Post</p>
+        <p class="title_content__subtitle">Fill out the form below and publish your article</p>
+      </div>
+      <button type="submit" class="title__button" name="formInput" onclick="formSend()">Publish</button>
+    </div>
+    <div class="admin__main-information">
+      <p class="main-information__title">Main Information</p>      
+      <div class="main-information__content-frame">
+        <div class="content-frame__left">
+          <div class="input__title">
+            <p class="title__text">Title</p>
+            <input type="text" class="input-box" name="titleInput" onblur="Preview()">
+          </div>
+          <div class="input__description">
+            <p class="description__text">Short description</p>
+            <input type="text" class="input-box" name="subtitleInput" onblur="Preview()">
+          </div>
+          <div class="input__author-name">
+            <p class="author-name__text">Author name</p>
+            <input type="text" class="input-box input-box__name" name="nameInput" onblur="Preview()">
+          </div>
+          <div class="input__author-photo">
+            <p class="author-photo__text">Author Photo</p>
+            <div class="author-photo__author-photo-frame">
+              <img class="author-photo-frame__photo" src="../static/img/author-photo.svg">
+              <p class="author-photo-frame__text">Upload</p>
+            </div>
+          </div>
+          <div class="input__date">
+            <p class="date__text">Publish Date</p>
+            <input type="date" class="input-box" name="dateInput" onblur="Preview()">
+          </div>
+          <div class="input__big-image-frame">
+            <p class="big-image-frame__text">Hero Image</p>
+            <div class="big-image-frame__big-image-content">
+              <div class="big-image-content__big-image">
+                <img>
+              </div>
+              <p>Size up to 10mb. Format: png, jpeg, gif.</p>
+            </div class="big-image-content__text">
+          </div>
+          <div class="input__small-image-frame">
+            <p class="small-image-frame__text">Hero Image</p>
+            <div class="small-image-frame__small-image-content">
+              <div class="small-image-content__small-image">
+                <img>
+              </div>
+              <p class="small-image-content__text">Size up to 5mb. Format: png, jpeg, gif.</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-frame__right">
+          <p class="right__text">Article preview</p>
+          <div class="grad-area"></div>
+          <div class="grad-area-horizontal"></div>
+          <img class="preview-image" src="../static/img/page_preview.svg">
+          <div class="right__big-preview">
+            <p class="big-preview__title">New Post</p>  
+            <p class="big-preview__subtitle">Please, enter any description</p>
+            <div class="big-preview__image">
+              <img>
+            </div> 
+          </div>
+          <p class="right__text">Post card preview</p>
+          <div class="grad-area__card"></div>
+          <div class="grad-area-horizontal__card"></div>
+          <img class="preview-card" src="../static/img/card_preview.svg">
+          <div class="right__small-preview">
+            <div class="small-preview__image">
+                <img>
+            </div> 
+            <p class="small-preview__title">New Post</p>  
+            <p class="small-preview__subtitle">Please, enter any description</p>
+            <div class="small-preview_card-info">
+              
+            </div>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+    <div class="admin__content">
+      <p class="content__title">Content</p>    
+      <div class="content__field-frame">
+        <p class="field-frame__text">Post content (plain text)</p>
+        <textarea class="field-frame__field" placeholder="Type anything you want ..." id="text_area"></textarea>
+    </div>
+    </div>
+  </div>
+</body>

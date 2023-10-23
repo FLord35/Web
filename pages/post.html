@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Index</title>
+  <link href="../static/css/main.css" rel="stylesheet">
+  <link href="../static/css/post.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+</head>
+<body class="container">
+  <header class="hood">
+    <div class="hood__hood-content">
+      <div class="hood-content__extra">
+        <img class="hood-content__logo" src="../static/img/escape_black.svg" alt="Escape.">
+        <nav>
+          <ul class="nav-header">
+            <li><a class="nav-header__link__black" href="#">HOME</a></li>
+            <li><a class="nav-header__link__black" href="#">CATEGORIES</a></li>
+            <li><a class="nav-header__link__black" href="#">ABOUT</a></li>
+            <li><a class="nav-header__link__black" href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <article class="article">
+
+    {{ range .Post }}
+
+    <div class="article__main">
+      <h1 class="main__title">{{ .Title }}</h1>
+      <p class="main__description">{{ .Subtitle }}</p>
+    </div>
+    <img class="article__image" src="{{ .PostImg }}" alt="The Road Ahead">
+    <div class="article__article-content">
+      <div class="article-content__text">{{ .Content }}</div>
+    </div>
+
+    {{ end }}
+
+  </article>
+  <footer class="footer">
+    <img class="footer__image" src="../static/img/stay_in_touch.png" alt="Stay in touch">
+    <div class="footer__in-touch">
+      <h2 class="in-touch__header">Stay in Touch</h2>
+      <hr class="underline">
+      <form class="in-touch__email">
+        <input class="email__field" type="text" placeholder="Enter your email address">
+        <button class="email__button">Submit</button>
+      </form>
+    </div>
+    <div class="footer__footer-content">
+      <div class="footer-content__extra">
+        <img class="footer-content__logo" src="../static/img/escape_white.svg" alt="Escape.">
+        <nav>
+          <ul class="nav-footer">
+            <li><a class="nav-footer__link" href="#">HOME</a></li>
+            <li><a class="nav-footer__link" href="#">CATEGORIES</a></li>
+            <li><a class="nav-footer__link" href="#">ABOUT</a></li>
+            <li><a class="nav-footer__link" href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
