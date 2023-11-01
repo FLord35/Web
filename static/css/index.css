@@ -92,7 +92,6 @@
     flex-direction: column;
     align-items: center;
     background: #F7F7F7;
-    height: 1657px;
     width: 100%;
 }
 
@@ -299,6 +298,8 @@
     margin-left: 17px;
     width: 34px;
     height: 34px;
+    border-radius: 17px;
+    border-style: none;
 }
 
 .recent-post-footer__author
@@ -316,4 +317,11 @@
     font: normal 16px/35px 'Oxygen';
     margin-top: 16px;
     margin-left: 298px;
+}
+
+.pre-footer{
+    display: flex;
+    background: #F7F7F7;
+    width: 100%;
+    height: 120px;
 }

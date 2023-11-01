@@ -39,7 +39,7 @@ VALUES
 
     As I made my way down the mountain, I was struck by the stark contrast between the snowy landscape at the top and the lush greenery at the bottom. It was a reminder that even within a single journey, we can experience vastly different environments and cultures. The descent was a thrilling adventure as I navigated through rocky terrain and rushing streams. The journey down was just as rewarding as the climb up, and I felt a deep sense of satisfaction as I reached the valley floor.
 
-    hroughout the journey, I was reminded of the importance of trying new things and stepping outside of our comfort zones. Every time we take a chance and explore something new, we open ourselves up to incredible experiences and opportunities. Traveling allows us to broaden our horizons and gain a deeper understanding of the world around us.
+    Throughout the journey, I was reminded of the importance of trying new things and stepping outside of our comfort zones. Every time we take a chance and explore something new, we open ourselves up to incredible experiences and opportunities. Traveling allows us to broaden our horizons and gain a deeper understanding of the world around us.
 
     In conclusion, my journey from top to bottom was a reminder of the beauty and wonder that exists in our world. It was a journey that left me with memories I will cherish for a lifetime. I encourage everyone to take the time to go somewhere they've never been before, and to experience all the amazing things our world has to offer. Only by exploring new places and trying new things can we truly appreciate the vastness and diversity of our planet."
 ),

@@ -26,9 +26,12 @@ func main() {
 	mux := mux.NewRouter()
 	mux.HandleFunc("/home", index(dbx))
 	mux.HandleFunc("/post/{postID}", post(dbx))
-	mux.HandleFunc("/login", login(dbx))
+	mux.HandleFunc("/login", login)
 	mux.HandleFunc("/admin", admin(dbx))
 
+	mux.HandleFunc("/api/post", createPost(dbx)).Methods(http.MethodPost)
+	//mux.HandleFunc("/api/login", searchUser(dbx)).Methods(http.MethodPost)
+	//mux.HandleFunc("/api/logout", deleteUser(dbx)).Methods(http.MethodPost)
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	log.Println("Start server " + port)

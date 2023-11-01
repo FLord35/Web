@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Index</title>
+  <title>Login</title>
   <link href="../static/css/main.css" rel="stylesheet">
   <link href="../static/css/login.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oxygen" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+  <script src="../static/js/login.js"></script>
 </head>
 <body class="container">
   <img class="login-background" src="../static/img/admin_background.png" alt="Admin Background">
@@ -18,17 +19,24 @@
     </div>
     <div class="screen__login-form">
       <p class="login-form__text">Log In</p>
+      <div class="login__messages">
+        <div class="messages__message-preparation" id="message">
+          <img class="message__icon" src="../static/img/alert-circle.svg">
+          <p class="message__text">Placeholder</p>
+        </div>
+      </div>
       <form class="login-form__form">
         <div class="form__email-password">
           <p class="email-password__text">Email</p>
-          <input class="email-password__admin-field" type="email">
+          <input class="email-password__admin-field _input" id="input-email" type="email" onchange="ChangeFieldColor()">
         </div>
+        <div class="form__delimeter"></div>
         <div class="form__email-password">
           <p class="email-password__text">Password</p>
-          <input class="email-password__admin-field" type="password">
-          <img class="email-password_image" src="../static/img/eye.svg">
+          <input class="email-password__admin-field _input" id="input-password" type="password" onchange="ChangeFieldColor()">
+          <img class="email-password__image" src="../static/img/eye-off.svg" onclick="ChangePasswordVisibility()">
         </div>
-        <button class="form__button">Log In</button>
+        <button class="form__button" onclick="LogIn()">Log In</button>
     </form>
     </div>
   </div>

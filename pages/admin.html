@@ -8,9 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Oxygen" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+  <script src="../static/js/admin.js"></script>
 </head>
 <body class="container">
-  <div class="admin">
+  <div class="admin" method="post">
     <header class="admin__header">
         <div class="header__content">
         <img class="content__logo-admin" src="../static/img/escape_author_white.svg" alt="Logo">
@@ -20,11 +21,17 @@
         </div>
     </header>
     <div class="admin__title">
-      <div class="title_content">
-        <p class="title_content__title">New Post</p>
-        <p class="title_content__subtitle">Fill out the form below and publish your article</p>
+      <div class="title__content">
+        <p class="title__content-title">New Post</p>
+        <p class="title__content-subtitle">Fill out the form below and publish your article</p>
       </div>
-      <button type="submit" class="title__button" name="formInput" onclick="formSend()">Publish</button>
+      <button type="submit" class="title__button" name="formInput" onclick="Publish()">Publish</button>
+    </div>
+    <div class="admin__messages">
+      <div class="messages__message-preparation" id="message">
+        <img class="message__icon" src="../static/img/alert-circle.svg">
+        <p class="message__text">Placeholder</p>
+      </div>
     </div>
     <div class="admin__main-information">
       <p class="main-information__title">Main Information</p>      
@@ -32,43 +39,82 @@
         <div class="content-frame__left">
           <div class="input__title">
             <p class="title__text">Title</p>
-            <input type="text" class="input-box" name="titleInput" onblur="Preview()">
+            <input type="text" class="input-box _input" id="titleInput" placeholder="New Post" onblur="Preview()">
           </div>
           <div class="input__description">
             <p class="description__text">Short description</p>
-            <input type="text" class="input-box" name="subtitleInput" onblur="Preview()">
+            <input type="text" class="input-box _input" id="subtitleInput" placeholder="Please, enter any description" onblur="Preview()">
           </div>
           <div class="input__author-name">
             <p class="author-name__text">Author name</p>
-            <input type="text" class="input-box input-box__name" name="nameInput" onblur="Preview()">
+            <input type="text" class="input-box input-box__name _input" id="authorNameInput" onblur="Preview()">
           </div>
           <div class="input__author-photo">
             <p class="author-photo__text">Author Photo</p>
             <div class="author-photo__author-photo-frame">
-              <img class="author-photo-frame__photo" src="../static/img/author-photo.svg">
-              <p class="author-photo-frame__text">Upload</p>
+              <img class="author-photo-frame__preview" src="">
+              <input type="file" class="author-photo-frame__author-photo-input _input" id="input-author-name" onchange="PreviewAuthorPhoto()">
+              <label for="input-author-name" class="author-photo-input__photo-label">
+                <span><img class="photo-label__photo" src="../static/img/author-photo.svg"></span>
+                <span><img class="photo-label__icon" src="../static/img/camera.svg"></span>
+                <span><p class="photo-label__text">Upload</p></span>
+              </label>
+              <div class="author-photo-frame__remove" onclick="RemoveAuthorPhoto()">
+                <img class="remove__icon" src="../static/img/trash.svg">
+                <p class="remove__text">Remove</p>
+              </div>
             </div>
           </div>
           <div class="input__date">
             <p class="date__text">Publish Date</p>
-            <input type="date" class="input-box" name="dateInput" onblur="Preview()">
+            <input type="date" class="input-box _input" id="dateInput" onblur="Preview()">
           </div>
           <div class="input__big-image-frame">
             <p class="big-image-frame__text">Hero Image</p>
             <div class="big-image-frame__big-image-content">
               <div class="big-image-content__big-image">
-                <img>
+                <img class="big-image__preview" src="">
+                <input type="file" class="big-image__big-image-input _input" id="input-big-image" onchange="PreviewBigImage()">
+                <label for="input-big-image" class="big-image__big-image-label">
+                  <span><img class="big-image-label__photo" src="../static/img/camera.svg"></span>
+                  <span><p class="big-image-label__text">Upload</p></span>
+                </label>
               </div>
-              <p>Size up to 10mb. Format: png, jpeg, gif.</p>
-            </div class="big-image-content__text">
+              <p class="big-image-content__text">Size up to 10mb. Format: png, jpeg, gif.</p>
+              <div class="big-image-content__big-bonus-menu">
+                <label for="input-big-image" class="big-bonus-menu__big-image-label">
+                  <span><img class="big-image-label__icon" src="../static/img/camera.svg"></span>
+                  <span><p class="big-image-label__bonus-text">Upload New</p></span>
+                </label>
+                <div class="big-bonus-menu__remove" onclick="RemoveBigPhoto()">
+                  <img class="remove__icon" src="../static/img/trash.svg">
+                  <p class="remove__text">Remove</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="input__small-image-frame">
             <p class="small-image-frame__text">Hero Image</p>
             <div class="small-image-frame__small-image-content">
               <div class="small-image-content__small-image">
-                <img>
+                <img class="small-image__preview" src="">
+                <input type="file" class="small-image__small-image-input _input" id="input-small-image" onchange="PreviewSmallImage()">
+                <label for="input-small-image" class="small-image__small-image-label">
+                  <span><img class="small-image-label__photo" src="../static/img/camera.svg"></span>
+                  <span><p class="small-image-label__text">Upload</p></span>
+                </label>
               </div>
               <p class="small-image-content__text">Size up to 5mb. Format: png, jpeg, gif.</p>
+              <div class="small-image-content__small-bonus-menu">
+                <label for="input-small-image" class="small-bonus-menu__small-image-label">
+                  <span><img class="small-image-label__icon" src="../static/img/camera.svg"></span>
+                  <span><p class="small-image-label__bonus-text">Upload New</p></span>
+                </label>
+                <div class="small-bonus-menu__remove" onclick="RemoveSmallPhoto()">
+                  <img class="remove__icon" src="../static/img/trash.svg">
+                  <p class="remove__text">Remove</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -81,7 +127,7 @@
             <p class="big-preview__title">New Post</p>  
             <p class="big-preview__subtitle">Please, enter any description</p>
             <div class="big-preview__image">
-              <img>
+              <img class="big-preview__subimage" src="">
             </div> 
           </div>
           <p class="right__text">Post card preview</p>
@@ -90,17 +136,18 @@
           <img class="preview-card" src="../static/img/card_preview.svg">
           <div class="right__small-preview">
             <div class="small-preview__image">
-                <img>
+              <img class="small-preview__subimage" src="">
             </div> 
             <p class="small-preview__title">New Post</p>  
             <p class="small-preview__subtitle">Please, enter any description</p>
             <div class="small-preview__card-info">
               <img class="card-info__author-photo" src="../static/img/author_photo_placeholder.svg">
-              <p class="card-info__author-name">Enter author name</p>
-              <p class="card-info__date">4/19/2023</p>
+              <div class="card-info__midframe">
+                <p class="card-info__author-name">Enter author name</p>
+                <p class="card-info__date">yyyy-mm-dd</p>
+              </div>
             </div>
-          </div>
-            
+          </div> 
         </div>
       </div>
     </div>
@@ -108,8 +155,8 @@
       <p class="content__title">Content</p>    
       <div class="content__field-frame">
         <p class="field-frame__text">Post content (plain text)</p>
-        <textarea class="field-frame__field" placeholder="Type anything you want ..." id="text_area"></textarea>
-    </div>
+        <textarea class="field-frame__field _input" placeholder="Type anything you want ..." id="contentInput" onblur="Preview()"></textarea>
+      </div>
     </div>
   </div>
 </body>

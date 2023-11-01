@@ -32,7 +32,6 @@
 
 .article__image
 {
-    position: absolute;
     width: 100%;
     margin-top: 152px;;
     z-index: 1;

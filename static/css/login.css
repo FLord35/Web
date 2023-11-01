@@ -46,8 +46,8 @@
     border-radius: 3px;
     display: flex;
     flex-direction: column;
-    justify-content: right;
-    align-items: right;
+    justify-content: flex-start;
+    align-items: left;
     width: 632px;
     height: 738px;
     background-color: #FFFFFF;
@@ -61,6 +61,7 @@
     margin-top: 78px;
     margin-left: 50px;
     font: 400 normal 44px/40px 'Lora';
+    margin-bottom: 20px;
 }
 
 .login-form__form
@@ -71,7 +72,11 @@
 
 .form__email-password
 {
-    margin-top: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 38px;
 }
 
 .email-password__text
@@ -83,12 +88,22 @@
 .email-password__admin-field
 {
     width: 530px;
-    height: 40px;
-    background: #FFFFFF;
-    border: 0;
-    border-bottom: 1px solid #EAEAEA;
+    height: 54px;   
+    border: 0;   
     outline-width: 0;
-    margin-top: 20px;
+    margin-top: 6px;
+    font: 400 normal 20px/16px 'Oxygen';
+    color: #000000;
+    border-style: none;
+    border-radius: 2px;
+
+    background: #FFFFFF;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.form__delimeter
+{
+    height: 16px;
 }
 
 .form__button
@@ -105,5 +120,113 @@
 
 .email-password__image
 {
-    margin-right: 100px;
+    width: 32px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 494px;
+}
+
+.login__messages
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.messages__message-preparation
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 530px;
+    opacity: 0%;
+    height: 0px;
+    margin-top: 0px;
+}
+
+.messages__error-message
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #FFEBEA;
+    border-radius: 5px;
+    border-inline: solid;
+    border-color: #E86961;
+    border-right: 5px;
+    width: 530px;
+}
+
+.message__icon
+{
+    height: 32px;
+    margin-left: 14px;
+}
+
+.message__text
+{
+    font: 400 normal 18.5px/20px 'Oxygen';
+    line-height: 20px;
+    color: #000000;
+    margin-left: 12px;
+}
+.message-disappear
+{
+    animation-name: message-animation-disappear;
+    animation-duration: 0.3s;
+}
+
+.message-appear
+{
+    animation-name: message-animation-appear;
+    animation-duration: 0.3s;
+}
+
+.message-hidden
+{
+    opacity: 0%;
+    height: 0px;
+    margin-top: 0px;
+}
+
+.message-shown
+{
+    opacity: 100%;
+    height: 58px;
+    margin-top: 42px;
+}
+
+@keyframes message-animation-appear
+{
+    from
+    {
+        opacity: 0%;
+        height: 0px;
+        margin-top: 0px;
+    }
+    to
+    {
+        opacity: 100%;
+        height: 58px;
+        margin-top: 42px;
+    }
+}
+
+@keyframes message-animation-disappear
+{
+    from
+    {
+        opacity: 100%;
+        height: 58px;
+        margin-top: 42px;
+    }
+    to
+    {
+        opacity: 0%;
+        height: 0px;
+        margin-top: 0px;
+    }
 }
